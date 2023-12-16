@@ -2,27 +2,41 @@ package steps;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.Boleteria;
+import pages.Login;
 
 public class BoleteriaTestNG {
 
 
     Boleteria boleteria = new Boleteria();
+    Login loginPage = new Login();
 
-    @Test
+    @BeforeSuite
     public void navigateTo(){
         boleteria.navigateToBoleteria();
+
     }
 
-    @Test(dependsOnMethods = "navigateTo")
-    public void clickOnLogin(){
-        boleteria.login();
+    @Test
+    public void login(){
+        boleteria.clickElement(boleteria.loginButton);
+        loginPage.login();
+        loginPage.clickElement(loginPage.loginButton);
+
     }
 
     /*@AfterTest
-    public void closeBrowser(){
-        boleteria.
+    public void logOut(){
+        boleteria.clickElement(boleteria);
     }*/
+
+    @AfterSuite
+    public void closeChrome(){
+        boleteria.closeBrowser();
+    }
+
+
 
 }

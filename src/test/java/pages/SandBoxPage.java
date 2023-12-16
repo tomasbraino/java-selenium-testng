@@ -22,12 +22,12 @@ public class SandBoxPage {
         ChromeOptions chromeOptions = new ChromeOptions();
         System.setProperty("webdriver.chrome.driver", "/Users/tomasbrainovich/Documents/Drivers/chromedriver");
         driver = new ChromeDriver(chromeOptions);
-       // wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, 10);
     }
 
     public SandBoxPage(WebDriver driver) { //constructor
         SandBoxPage.driver = driver;
-       // wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, 10);
     }
 
     public static void navigateTo(String url) {
