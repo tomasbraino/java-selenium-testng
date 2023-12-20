@@ -27,10 +27,11 @@ public class BoleteriaTestNG {
 
     }
 
-    /*@AfterTest
+    @AfterTest
     public void logOut(){
-        boleteria.clickElement(boleteria);
-    }*/
+        boleteria.clickElement(boleteria.miCuenta);
+
+    }
 
     @AfterSuite
     public void closeChrome(){

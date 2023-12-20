@@ -17,16 +17,21 @@ public class Boleteria extends SandBoxPage{
 
     public final String searchBar = "//input[@id='input_buscador']";
 
-
+    public final String logOut = "//*[@id='miCuenta']/ul/li[3]/a";
     public final String forgotMyPassword = "//*[@id=aLogIn]/ul/li[2]/a";
     public final String register = "//*[@id=aLogIn/ul/li[1]/a/i";
 
-    public final String miCuenta = "//*[@id='miCuenta']/a";
+    public final String miCuenta = "//a[contains(text(),'Mi Cuenta')]";
 
 
     //methods
     public void navigateToBoleteria(){
         navigateTo("https://natacionygimnasia.boleteriadigital.com.ar/default");
+
+    }
+
+    public void logOut(){
+        selectFromDropDown(miCuenta, 2);
 
     }
 
